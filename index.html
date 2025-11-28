@@ -2,11 +2,11 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Área de membros do curso Salgados Perfeitos - Aprenda a fazer os melhores salgados com técnicas profissionais">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Aprenda a fazer os melhores salgados com técnicas profissionais">
     <meta name="keywords" content="salgados, receitas, curso, culinária, bazar, vendas">
     <meta name="author" content="Salgados Perfeitos">
-    <title>Salgados Perfeitos - Área de Membros</title>
+    <title>Salgados Perfeitos</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,6 +22,11 @@
     <style>
         * {
             font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            overflow-x: hidden;
         }
         
         .card-hover {
@@ -30,48 +35,7 @@
         
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.0.1);
-        }
-        
-        .achievement-badge {
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .progress-fill {
-            transition: width 1s ease;
-        }
-        
-        .notification-toast {
-            animation: slideIn 0.5s ease;
-        }
-        
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        .mission-card {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        }
-        
-        .xp-animation {
-            animation: xpGlow 2s ease infinite;
-        }
-        
-        @keyframes xpGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(255, 193, 7, 0.8); }
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         
         .menu-mobile {
@@ -97,797 +61,735 @@
             width: 100%;
             height: 100%;
         }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* iPhone 14/15/16 optimizations */
+        @supports (-webkit-touch-callout: none) {
+            .card-hover:hover {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 428px) { /* iPhone 14/15 */
+            .grid-cols-1 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+        }
+        
+        @media (max-width: 390px) { /* iPhone 14 mini */
+            .lesson-card {
+                margin-bottom: 1rem;
+            }
+            
+            .lesson-card img {
+                height: 200px;
+                object-fit: cover;
+            }
+            
+            .p-4 {
+                padding: 1rem;
+            }
+            
+            h3 {
+                font-size: 1.125rem;
+            }
+            
+            .text-sm {
+                font-size: 0.875rem;
+            }
+            
+            .text-xs {
+                font-size: 0.75rem;
+            }
+            
+            .px-2 {
+                padding: 0.5rem;
+            }
+            
+            .py-2 {
+                padding: 0.5rem;
+            }
+            
+            .py-3 {
+                padding: 0.75rem;
+            }
+            
+            .px-4 {
+                padding: 1rem;
+            }
+            
+            .px-6 {
+                padding: 1.5rem;
+            }
+            
+            .py-4 {
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 375px) { /* iPhone SE */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .h-16 {
+                height: 3.5rem;
+            }
+            
+            .text-3xl {
+                font-size: 1.5rem;
+            }
+            
+            .text-2xl {
+                font-size: 1.25rem;
+            }
+            
+            .text-xl {
+                font-size: 1.125rem;
+            }
+            
+            .text-lg {
+                font-size: 1rem;
+            }
+            
+            .p-6 {
+                padding: 1rem;
+            }
+            
+            .px-4 {
+                padding: 0.75rem;
+            }
+        }
+        
+        @media (max-width: 320px) { /* iPhone 12 mini */
+            .grid-cols-1 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+            
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .w-10 {
+                width: 2.5rem;
+            }
+            
+            .h-10 {
+                height: 2.5rem;
+            }
+            
+            .w-12 {
+                width: 3rem;
+            }
+            
+            .h-12 {
+                height: 3rem;
+            }
+            
+            .text-3xl {
+                font-size: 1.25rem;
+            }
+            
+            .text-2xl {
+                font-size: 1.125rem;
+            }
+            
+            .text-xl {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Landscape orientation fixes */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .lesson-card {
+                max-width: 300px;
+                margin: 0 auto 1rem;
+            }
+            
+            .lesson-card img {
+                height: 150px;
+            }
+        }
+        
+        /* Touch-friendly buttons */
+        button {
+            min-height: 44px;
+            min-width: 44px;
+            touch-action: manipulation;
+        }
+        
+        .btn-lg {
+            min-height: 48px;
+            min-width: 48px;
+        }
+        
+        /* Safe areas for iPhone notch */
+        @supports (-webkit-touch-callout: none) {
+            .sticky {
+                padding-top: env(safe-area-inset-top, 44px);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-lg sticky top-0 z-40">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-4">
-                    <button id="menuToggle" class="lg:hidden text-gray-700 hover:text-orange-500 transition">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                    <div class="flex items-center space-x-2">
-                        <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
-                            <i class="fas fa-cookie-bite text-white text-xl"></i>
-                        </div>
-                        <span class="text-xl font-bold text-gray-800">Salgados Perfeitos</span>
-                    </div>
+    <!-- Tela de Onboarding -->
+    <div id="onboardingScreen" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-400 to-pink-500 p-4">
+        <div class="bg-white rounded-2xl shadow-2xl p-6 max-w-md w-full fade-in">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 pulse">
+                    <i class="fas fa-cookie-bite text-white text-2xl"></i>
                 </div>
-                
-                <!-- User Info Desktop -->
-                <div class="hidden lg:flex items-center space-x-6">
-                    <div class="flex items-center space-x-2">
-                        <div class="text-right">
-                            <p class="text-sm text-gray-600">Olá,</p>
-                            <p class="font-semibold text-gray-800">Maria Silva</p>
-                        </div>
-                        <img src="https://picsum.photos/seed/user123/40/40" alt="User" class="w-10 h-10 rounded-full border-2 border-orange-500">
-                    </div>
-                    <div class="flex items-center space-x-2 bg-yellow-100 px-3 py-1 rounded-full">
-                        <i class="fas fa-star text-yellow-500"></i>
-                        <span class="font-bold text-yellow-700" id="userLevel">Nível 12</span>
-                    </div>
-                    <div class="flex items-center space-x-1 bg-purple-100 px-3 py-1 rounded-full">
-                        <i class="fas fa-bolt text-purple-500"></i>
-                        <span class="font-bold text-purple-700" id="userXP">2,450 XP</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="menu-mobile fixed top-16 left-0 w-64 h-full bg-white shadow-2xl z-30 lg:hidden">
-        <div class="p-4">
-            <div class="flex items-center space-x-3 mb-6">
-                <img src="https://picsum.photos/seed/user123/50/50" alt="User" class="w-12 h-12 rounded-full">
-                <div>
-                    <p class="font-semibold">Maria Silva</p>
-                    <p class="text-sm text-gray-600">Nível 12 • 2,450 XP</p>
-                </div>
-            </div>
-            <nav class="space-y-2">
-                <a href="#dashboard" class="block px-4 py-2 rounded-lg hover:bg-orange-50 transition">
-                    <i class="fas fa-home mr-2"></i> Dashboard
-                </a>
-                <a href="#aulas" class="block px-4 py-2 rounded-lg hover:bg-orange-50 transition">
-                    <i class="fas fa-video mr-2"></i> Aulas
-                </a>
-                <a href="#conquistas" class="block px-4 py-2 rounded-lg hover:bg-orange-50 transition">
-                    <i class="fas fa-trophy mr-2"></i> Conquistas
-                </a>
-                <a href="#ranking" class="block px-4 py-2 rounded-lg hover:bg-orange-50 transition">
-                    <i class="fas fa-medal mr-2"></i> Ranking
-                </a>
-                <a href="#comunidade" class="block px-4 py-2 rounded-lg hover:bg-orange-50 transition">
-                    <i class="fas fa-comments mr-2"></i> Comunidade
-                </a>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-6">
-        <!-- Welcome Banner -->
-        <section class="bg-gradient-to-r from-orange-400 to-pink-500 rounded-2xl p-6 mb-8 text-white card-hover">
-            <div class="flex flex-col lg:flex-row items-center justify-between">
-                <div class="mb-4 lg:mb-0">
-                    <h1 class="text-3xl font-bold mb-2">🎉 Bem-vinda de volta, Maria!</h1>
-                    <p class="text-lg opacity-90">Você está a <span class="font-bold">3 aulas</span> de desbloquear a conquista "Mestre dos Salgados"!</p>
-                    <button onclick="startNewLesson()" class="mt-4 bg-white text-orange-500 px-6 py-2 rounded-full font-semibold hover:scale-105 transition">
-                        Continuar de onde parou →
-                    </button>
-                </div>
-                <div class="text-center">
-                    <div class="achievement-badge">
-                        <i class="fas fa-trophy text-6xl text-yellow-300"></i>
-                    </div>
-                    <p class="mt-2 font-semibold">15 Conquistas</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Progress Bar -->
-        <section class="bg-white rounded-xl p-6 mb-8 shadow-lg">
-            <div class="flex items-center justify-between mb-2">
-                <h3 class="font-semibold text-gray-700">Seu Progresso no Curso</h3>
-                <span class="text-sm text-gray-600">75% Completo</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                <div class="progress-fill bg-gradient-to-r from-orange-400 to-pink-500 h-full rounded-full" style="width: 75%"></div>
-            </div>
-            <div class="flex justify-between mt-2 text-xs text-gray-600">
-                <span>18 de 24 aulas concluídas</span>
-                <span>Próximo nível: 3,000 XP</span>
-            </div>
-        </section>
-
-        <!-- Missões Semanais -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                <i class="fas fa-fire text-orange-500 mr-2"></i>Missões Semanais
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="mission-card rounded-xl p-4 card-hover">
-                    <div class="flex items-center justify-between mb-2">
-                        <i class="fas fa-utensils text-2xl text-orange-600"></i>
-                        <span class="text-xs bg-white px-2 py-1 rounded-full font-semibold">+50 XP</span>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Chef da Semana</h3>
-                    <p class="text-sm text-gray-600 mb-3">Prepare 3 receitas novas</p>
-                    <div class="w-full bg-white rounded-full h-2">
-                        <div class="bg-orange-500 h-full rounded-full" style="width: 66%"></div>
-                    </div>
-                    <p class="text-xs text-gray-600 mt-1">2/3 concluído</p>
-                </div>
-                
-                <div class="mission-card rounded-xl p-4 card-hover">
-                    <div class="flex items-center justify-between mb-2">
-                        <i class="fas fa-video text-2xl text-pink-600"></i>
-                        <span class="text-xs bg-white px-2 py-1 rounded-full font-semibold">+30 XP</span>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Estudante Dedicação</h3>
-                    <p class="text-sm text-gray-600 mb-3">Assista 5 vídeos esta semana</p>
-                    <div class="w-full bg-white rounded-full h-2">
-                        <div class="bg-pink-500 h-full rounded-full" style="width: 40%"></div>
-                    </div>
-                    <p class="text-xs text-gray-600 mt-1">2/5 concluído</p>
-                </div>
-                
-                <div class="mission-card rounded-xl p-4 card-hover">
-                    <div class="flex items-center justify-between mb-2">
-                        <i class="fas fa-share-alt text-2xl text-purple-600"></i>
-                        <span class="text-xs bg-white px-2 py-1 rounded-full font-semibold">+40 XP</span>
-                    </div>
-                    <h3 class="font-semibold text-gray-800 mb-1">Influenciadora</h3>
-                    <p class="text-sm text-gray-600 mb-3">Compartilhe 2 receitas na comunidade</p>
-                    <div class="w-full bg-white rounded-full h-2">
-                        <div class="bg-purple-500 h-full rounded-full" style="width: 100%"></div>
-                    </div>
-                    <p class="text-xs text-green-600 mt-1 font-semibold">✓ Completo!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Aulas Section -->
-        <section id="aulas" class="mb-8">
-            <div class="flex items-center justify-between mb-4">
-                <h2 class="text-2xl font-bold text-gray-800">
-                    <i class="fas fa-book-open text-orange-500 mr-2"></i>Aulas do Curso
-                </h2>
-                <div class="flex space-x-2">
-                    <button onclick="filterCategory('all')" class="category-btn px-4 py-2 rounded-lg bg-orange-500 text-white font-semibold transition">Todas</button>
-                    <button onclick="filterCategory('assados')" class="category-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-orange-100 transition">Assados</button>
-                    <button onclick="filterCategory('fritos')" class="category-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-orange-100 transition">Fritos</button>
-                    <button onclick="filterCategory('festa')" class="category-btn px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-orange-100 transition">Festa</button>
-                </div>
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">Salgados Perfeitos</h1>
+                <p class="text-gray-600 mb-6">Transforme sua paixão em negócio com salgados deliciosos!</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Enroladinho Crocante -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="fritos">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/WNXFDMfD/enroladinho-de-salsicha-07-11.jpg" alt="Enroladinho Crocante" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-check mr-1"></i>Concluído
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Enroladinho Crocante</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">25 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Iniciante</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+20 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(1)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-play mr-1"></i>Assistir
-                            </button>
-                        </div>
-                    </div>
+            <form id="onboardingForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Seu nome completo</label>
+                    <input 
+                        type="text" 
+                        id="userName"
+                        placeholder="Digite seu nome" 
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                        required
+                    >
                 </div>
                 
-                <!-- Torta de Frango Cremosa -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="assados">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/Y7dH2xtw/torta-de-frango-fit.jpg" alt="Torta de Frango Cremosa" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-play mr-1"></i>Em andamento
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Torta de Frango Cremosa</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">30 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Intermediário</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+25 XP</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
-                            <div class="bg-yellow-500 h-full rounded-full" style="width: 60%"></div>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(2)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-play mr-1"></i>Continuar
-                            </button>
-                        </div>
-                    </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Seu e-mail</label>
+                    <input 
+                        type="email" 
+                        id="userEmail"
+                        placeholder="seu@email.com" 
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                        required
+                    >
                 </div>
                 
-                <!-- Hambúrguer de Forno -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="assados">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/9mYcWXRG/hamburgao-de-forno-capa.jpg" alt="Hambúrguer de Forno" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-check mr-1"></i>Concluído
+                <button 
+                    type="submit" 
+                    class="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition btn-lg"
+                >
+                    Entrar na Área de Membros
+                </button>
+            </form>
+            
+            <div class="text-center mt-6">
+                <p class="text-xs text-gray-500">
+                    Ao continuar, você concorda com nossos 
+                    <a href="#" class="text-orange-500 hover:underline">termos de uso</a> e 
+                    <a href="#" class="text-orange-500 hover:underline">política de privacidade</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div id="mainContent" class="hidden">
+        <!-- Header -->
+        <header class="bg-white shadow-lg sticky top-0 z-40">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center space-x-4">
+                        <button id="menuToggle" class="lg:hidden text-gray-700 hover:text-orange-500 transition">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-cookie-bite text-white text-xl"></i>
+                            </div>
+                            <span class="text-xl font-bold text-gray-800">Salgados Perfeitos</span>
                         </div>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Hambúrguer de Forno</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">35 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Avançado</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+30 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(3)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-redo mr-1"></i>Rever
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bauru Presunto e Queijo -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/pjcz9rb6/hq720.jpg" alt="Bauru Presunto e Queijo" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-check mr-1"></i>Concluído
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Bauru Presunto e Queijo</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">40 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Intermediário</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+25 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(4)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-redo mr-1"></i>Rever
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Pastel de Forno -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="assados">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/6JHPq9Wj/pastel-de-forno-com-recheio-de-frango-desktop.webp" alt="Pastel de Forno" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-check mr-1"></i>Concluído
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Pastel de Forno</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">45 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Avançado</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+35 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(5)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-redo mr-1"></i>Rever
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Esfiha Aberta de Frango -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/Vpg59zNQ/images.jpg" alt="Esfiha Aberta de Frango" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-play mr-1"></i>Novo!
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Esfiha Aberta de Frango</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">35 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Iniciante</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+20 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(6)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-play mr-1"></i>Assistir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Croquete de Linguiça Toscana -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="fritos">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/jk8W02WW/hq720-1.jpg" alt="Croquete de Linguiça Toscana" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-check mr-1"></i>Concluído
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Croquete de Linguiça Toscana</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">25 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Iniciante</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+20 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(7)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-redo mr-1"></i>Rever
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Esfiha Aberta de Carne -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/mFMtQDrx/i-Stock-537521984-1.jpg" alt="Esfiha Aberta de Carne" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-play mr-1"></i>Em andamento
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Esfiha Aberta de Carne</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">30 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Intermediário</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+25 XP</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
-                            <div class="bg-yellow-500 h-full rounded-full" style="width: 40%"></div>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(8)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-play mr-1"></i>Continuar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Esfiha de Calabresa -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/tWFMpHW/esfihas-de-calabresa.jpg" alt="Esfiha de Calabresa" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-check mr-1"></i>Concluído
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Esfiha de Calabresa</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">35 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Avançado</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+30 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(9)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-redo mr-1"></i>Rever
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Esfiha de Frango -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/mrwDy7LN/maxresdefault.jpg" alt="Esfiha de Frango" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-check mr-1"></i>Concluído
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Esfiha de Frango</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">40 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Avançado</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+30 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(10)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-redo mr-1"></i>Rever
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Joelho -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="assados">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/PZ9XyfXS/maxresdefault-2022-09-28-T111201-325-1024x576.jpg" alt="Joelho" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-check mr-1"></i>Concluído
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Joelho</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">45 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Intermediário</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+25 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(11)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-redo mr-1"></i>Rever
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Coxinha Sequinha e Crocante -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="fritos">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/vC0Kvbwr/images-1.jpg" alt="Coxinha Sequinha e Crocante" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-play mr-1"></i>Em andamento
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Coxinha Sequinha e Crocante</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">50 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Avançado</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+35 XP</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
-                            <div class="bg-yellow-500 h-full rounded-full" style="width: 75%"></div>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(12)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-play mr-1"></i>Continuar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Quibe Crocante com Mussarela -->
-                <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="fritos">
-                    <div class="relative">
-                        <img src="https://i.ibb.co/mrrXzMsg/images-2.jpg" alt="Quibe Crocante com Mussarela" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            <i class="fas fa-check mr-1"></i>Concluído
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">Quibe Crocante com Mussarela</h3>
-                        <div class="flex items-center text-sm text-gray-600 mb-3">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span class="mr-3">45 min</span>
-                            <i class="fas fa-signal mr-1"></i>
-                            <span class="mr-3">Avançado</span>
-                            <span class="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs font-semibold">+35 XP</span>
-                        </div>
-                        <div class="flex space-x-2">
-                            <button onclick="openLesson(13)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
-                                <i class="fas fa-redo mr-1"></i>Rever
-                            </button>
+                    
+                    <!-- User Info Desktop -->
+                    <div class="hidden lg:flex items-center space-x-6">
+                        <div class="flex items-center space-x-2">
+                            <div class="text-right">
+                                <p class="text-sm text-gray-600">Olá,</p>
+                                <p class="font-semibold text-gray-800" id="displayUserName">Visitante</p>
+                            </div>
+                            <img src="https://picsum.photos/seed/user123/40/40" alt="User" class="w-10 h-10 rounded-full border-2 border-orange-500">
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <!-- Ranking Section -->
-        <section id="ranking" class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                <i class="fas fa-crown text-yellow-500 mr-2"></i>Ranking Semanal
-            </h2>
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <div class="space-y-3">
-                    <!-- 1º Lugar -->
-                    <div class="flex items-center justify-between p-3 bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-lg">
-                        <div class="flex items-center space-x-3">
-                            <div class="text-2xl">🥇</div>
-                            <img src="https://picsum.photos/seed/user1/40/40" alt="User" class="w-10 h-10 rounded-full">
-                            <div>
-                                <p class="font-semibold">Ana Santos</p>
-                                <p class="text-sm text-gray-600">Nível 15</p>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <p class="font-bold text-lg text-yellow-600">3,250 XP</p>
-                            <p class="text-xs text-gray-600">+150 esta semana</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 2º Lugar -->
-                    <div class="flex items-center justify-between p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
-                        <div class="flex items-center space-x-3">
-                            <div class="text-2xl">🥈</div>
-                            <img src="https://picsum.photos/seed/user2/40/40" alt="User" class="w-10 h-10 rounded-full">
-                            <div>
-                                <p class="font-semibold">Carla Oliveira</p>
-                                <p class="text-sm text-gray-600">Nível 14</p>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <p class="font-bold text-lg text-gray-600">2,890 XP</p>
-                            <p class="text-xs text-gray-600">+120 esta semana</p>
-                        </div>
-                    </div>
-                    
-                    <!-- 3º Lugar -->
-                    <div class="flex items-center justify-between p-3 bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg">
-                        <div class="flex items-center space-x-3">
-                            <div class="text-2xl">🥉</div>
-                            <img src="https://picsum.photos/seed/user3/40/40" alt="User" class="w-10 h-10 rounded-full">
-                            <div>
-                                <p class="font-semibold">Patricia Costa</p>
-                                <p class="text-sm text-gray-600">Nível 13</p>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <p class="font-bold text-lg text-orange-600">2,650 XP</p>
-                            <p class="text-xs text-gray-600">+100 esta semana</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Usuário Atual -->
-                    <div class="flex items-center justify-between p-3 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg border-2 border-purple-300">
-                        <div class="flex items-center space-x-3">
-                            <div class="text-xl font-bold text-purple-600">#7</div>
-                            <img src="https://picsum.photos/seed/user123/40/40" alt="User" class="w-10 h-10 rounded-full border-2 border-purple-400">
-                            <div>
-                                <p class="font-semibold text-purple-700">Maria Silva (Você)</p>
-                                <p class="text-sm text-gray-600">Nível 12</p>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <p class="font-bold text-lg text-purple-600">2,450 XP</p>
-                            <p class="text-xs text-gray-600">+80 esta semana</p>
-                        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="menu-mobile fixed top-16 left-0 w-64 h-full bg-white shadow-2xl z-30 lg:hidden">
+            <div class="p-4">
+                <div class="flex items-center space-x-3 mb-6">
+                    <img src="https://picsum.photos/seed/user123/50/50" alt="User" class="w-12 h-12 rounded-full">
+                    <div>
+                        <p class="font-semibold" id="mobileUserName">Visitante</p>
+                        <p class="text-sm text-gray-600">Bem-vindo(a)!</p>
                     </div>
                 </div>
+                <nav class="space-y-2">
+                    <a href="#aulas" class="block px-4 py-2 rounded-lg hover:bg-orange-50 transition">
+                        <i class="fas fa-video mr-2"></i> Aulas
+                    </a>
+                    <a href="#" id="mobileLogoutBtn" class="block px-4 py-2 rounded-lg hover:bg-orange-50 transition">
+                        <i class="fas fa-sign-out-alt mr-2"></i> Sair
+                    </a>
+                </nav>
             </div>
-        </section>
+        </div>
 
-        <!-- Conquistas Section -->
-        <section id="conquistas" class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                <i class="fas fa-trophy text-yellow-500 mr-2"></i>Minhas Conquistas
-            </h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mb-2 achievement-badge">
-                        <i class="fas fa-cookie-bite text-white text-2xl"></i>
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-6">
+            <!-- Welcome Banner -->
+            <section class="bg-gradient-to-r from-orange-400 to-pink-500 rounded-2xl p-4 mb-8 text-white card-hover">
+                <div class="flex flex-col lg:flex-row items-center justify-between">
+                    <div class="mb-4 lg:mb-0">
+                        <h1 class="text-2xl font-bold mb-2">🎉 Bem-vindo(a) de volta, <span id="welcomeUserName">Visitante</span>!</h1>
+                        <p class="text-base opacity-90">Continue aprendendo a fazer os melhores salgados!</p>
+                        <button onclick="startNewLesson()" class="mt-4 bg-white text-orange-500 px-4 py-2 rounded-full font-semibold hover:scale-105 transition">
+                            Começar onde parou →
+                        </button>
                     </div>
-                    <p class="text-xs font-semibold">Primeira Receita</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mb-2 achievement-badge">
-                        <i class="fas fa-fire text-white text-2xl"></i>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                            <i class="fas fa-utensils text-orange-500 text-2xl"></i>
+                        </div>
+                        <p class="mt-2 font-semibold">13 Aulas Disponíveis</p>
                     </div>
-                    <p class="text-xs font-semibold">Mestre dos Fritos</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto bg-gradient-to-br from-green-400 to-teal-500 rounded-full flex items-center justify-center mb-2 achievement-badge">
-                        <i class="fas fa-leaf text-white text-2xl"></i>
-                    </div>
-                    <p class="text-xs font-semibold">Rainha dos Assados</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto bg-gradient-to-br from-pink-400 to-red-500 rounded-full flex items-center justify-center mb-2 achievement-badge">
-                        <i class="fas fa-heart text-white text-2xl"></i>
-                    </div>
-                    <p class="text-xs font-semibold">Chef Amadora</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 mx-auto bg-gradient-to-br from-indigo-400 to-blue-500 rounded-full flex items-center justify-center mb-2 achievement-badge">
-                        <i class="fas fa-star text-white text-2xl"></i>
-                    </div>
-                    <p class="text-xs font-semibold">5 Estrelas</p>
-                </div>
-                <div class="text-center opacity-50">
-                    <div class="w-20 h-20 mx-auto bg-gray-300 rounded-full flex items-center justify-center mb-2">
-                        <i class="fas fa-lock text-white text-2xl"></i>
-                    </div>
-                    <p class="text-xs font-semibold">???</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Comunidade Section -->
-        <section id="comunidade" class="mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                <i class="fas fa-comments text-orange-500 mr-2"></i>Comunidade
-            </h2>
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <div class="mb-4">
-                    <textarea placeholder="Compartilhe sua experiência ou tire suas dúvidas..." class="w-full p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-orange-500" rows="3"></textarea>
-                    <button class="mt-2 bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition">
-                        <i class="fas fa-paper-plane mr-2"></i>Publicar
+            <!-- Aulas Section -->
+            <section id="aulas" class="mb-8">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-bold text-gray-800">
+                        <i class="fas fa-book-open text-orange-500 mr-2"></i>Aulas do Curso
+                    </h2>
+                    <div class="flex space-x-2">
+                        <button onclick="filterCategory('all')" class="category-btn px-3 py-2 rounded-lg bg-orange-500 text-white font-semibold transition text-sm">Todas</button>
+                        <button onclick="filterCategory('assados')" class="category-btn px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-orange-100 transition text-sm">Assados</button>
+                        <button onclick="filterCategory('fritos')" class="category-btn px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-orange-100 transition text-sm">Fritos</button>
+                        <button onclick="filterCategory('festa')" class="category-btn px-3 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-orange-100 transition text-sm">Festa</button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Enroladinho Crocante -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="fritos">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/WNXFDMfD/enroladinho-de-salsicha-07-11.jpg" alt="Enroladinho Crocante" class="w-full h-48 object-cover">
+                            <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                <i class="fas fa-check mr-1"></i>Concluído
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg text-gray-800 mb-2">Enroladinho Crocante</h3>
+                            <div class="flex items-center text-sm text-gray-600 mb-3">
+                                <i class="fas fa-clock mr-1"></i>
+                                <span class="mr-2">25 min</span>
+                                <i class="fas fa-signal mr-1"></i>
+                                <span class="mr-2">Iniciante</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button onclick="openLesson(1)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                    <i class="fas fa-play mr-1"></i>Assistir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Torta de Frango Cremosa -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="assados">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/Y7dH2xtw/torta-de-frango-fit.jpg" alt="Torta de Frango Cremosa" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-play mr-1"></i>Em andamento
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Torta de Frango Cremosa</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">30 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                                    <div class="bg-yellow-500 h-full rounded-full" style="width: 60%"></div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(2)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-play mr-1"></i>Continuar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hambúrguer de Forno -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="assados">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/9mYcWXRG/hamburgao-de-forno-capa.jpg" alt="Hambúrguer de Forno" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-check mr-1"></i>Concluído
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Hambúrguer de Forno</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">35 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Avançado</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(3)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-redo mr-1"></i>Rever
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bauru Presunto e Queijo -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/pjcz9rb6/hq720.jpg" alt="Bauru Presunto e Queijo" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-check mr-1"></i>Concluído
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Bauru Presunto e Queijo</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">40 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Intermediário</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(4)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-redo mr-1"></i>Rever
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pastel de Forno -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="assados">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/6JHPq9Wj/pastel-de-forno-com-recheio-de-frango-desktop.webp" alt="Pastel de Forno" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-check mr-1"></i>Concluído
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Pastel de Forno</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">45 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Avançado</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(5)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-redo mr-1"></i>Rever
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Esfiha Aberta de Frango -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/Vpg59zNQ/images.jpg" alt="Esfiha Aberta de Frango" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-play mr-1"></i>Novo!
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Esfiha Aberta de Frango</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">35 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Iniciante</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(6)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-play mr-1"></i>Assistir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Croquete de Linguiça Toscana -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="fritos">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/jk8W02WW/hq720-1.jpg" alt="Croquete de Linguiça Toscana" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-check mr-1"></i>Concluído
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Croquete de Linguiça Toscana</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">25 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Iniciante</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(7)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-redo mr-1"></i>Rever
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Esfiha Aberta de Carne -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/mFMtQDrx/i-Stock-537521984-1.jpg" alt="Esfiha Aberta de Carne" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-play mr-1"></i>Em andamento
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Esfiha Aberta de Carne</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">30 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                                    <div class="bg-yellow-500 h-full rounded-full" style="width: 40%"></div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(8)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-play mr-1"></i>Continuar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Esfiha de Calabresa -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/tWFMpHW/esfihas-de-calabresa.jpg" alt="Esfiha de Calabresa" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-check mr-1"></i>Concluído
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Esfiha de Calabresa</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">35 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Avançado</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(9)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-redo mr-1"></i>Rever
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Esfiha de Frango -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="festa">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/mrwDy7LN/maxresdefault.jpg" alt="Esfiha de Frango" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-check mr-1"></i>Concluído
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Esfiha de Frango</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">40 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Avançado</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(10)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-redo mr-1"></i>Rever
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Joelho -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="assados">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/PZ9XyfXS/maxresdefault-2022-09-28-T111201-325-1024x576.jpg" alt="Joelho" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-check mr-1"></i>Concluído
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Joelho</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">45 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Intermediário</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(11)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-redo mr-1"></i>Rever
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coxinha Sequinha e Crocante -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="fritos">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/vC0Kvbwr/images-1.jpg" alt="Coxinha Sequinha e Crocante" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-play mr-1"></i>Em andamento
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Coxinha Sequinha e Crocante</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">50 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Avançado</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                                    <div class="bg-yellow-500 h-full rounded-full" style="width: 75%"></div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(12)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-play mr-1"></i>Continuar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quibe Crocante com Mussarela -->
+                    <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="fritos">
+                        <div class="relative">
+                            <img src="https://i.ibb.co/mrrXzMsg/images-2.jpg" alt="Quibe Crocante com Mussarela" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                    <i class="fas fa-check mr-1"></i>Concluído
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-gray-800 mb-2">Quibe Crocante com Mussarela</h3>
+                                <div class="flex items-center text-sm text-gray-600 mb-3">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span class="mr-2">45 min</span>
+                                    <i class="fas fa-signal mr-1"></i>
+                                    <span class="mr-2">Avançado</span>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button onclick="openLesson(13)" class="flex-1 bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition">
+                                        <i class="fas fa-redo mr-1"></i>Rever
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Video Modal -->
+        <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-4 border-b flex items-center justify-between">
+                    <h3 class="text-xl font-bold" id="modalTitle">Aula do Curso</h3>
+                    <button onclick="closeVideoModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-2xl"></i>
                     </button>
                 </div>
-                
-                <div class="space-y-4">
-                    <!-- Comment 1 -->
-                    <div class="border-b pb-4">
-                        <div class="flex items-start space-x-3">
-                            <img src="https://picsum.photos/seed/user4/40/40" alt="User" class="w-10 h-10 rounded-full">
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <p class="font-semibold">Fernanda Lima</p>
-                                    <span class="text-xs text-gray-500">Há 2 horas</span>
-                                </div>
-                                <p class="text-gray-700 mt-1">Fiz a receita de enroladinho hoje e ficou maravilhosa! Minha família amou! 🥰</p>
-                                <div class="flex items-center space-x-4 mt-2">
-                                    <button class="text-sm text-gray-600 hover:text-orange-500 transition">
-                                        <i class="far fa-heart mr-1"></i>12
-                                    </button>
-                                    <button class="text-sm text-gray-600 hover:text-orange-500 transition">
-                                        <i class="far fa-comment mr-1"></i>Responder
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                <div class="p-4">
+                    <div class="video-container mb-4" id="videoContainer">
+                        <!-- Video will be inserted here dynamically -->
                     </div>
-                    
-                    <!-- Comment 2 -->
-                    <div class="border-b pb-4">
-                        <div class="flex items-start space-x-3">
-                            <img src="https://picsum.photos/seed/user5/40/40" alt="User" class="w-10 h-10 rounded-full">
-                            <div class="flex-1">
-                                <div class="flex items-center justify-between">
-                                    <p class="font-semibold">Juliana Mendes</p>
-                                    <span class="text-xs text-gray-500">Há 5 horas</span>
-                                </div>
-                                <p class="text-gray-700 mt-1">Alguém já tentou fazer a massa de pastel sem glúten? Estou tentando adaptar as receitas.</p>
-                                <div class="flex items-center space-x-4 mt-2">
-                                    <button class="text-sm text-gray-600 hover:text-orange-500 transition">
-                                        <i class="far fa-heart mr-1"></i>8
-                                    </button>
-                                    <button class="text-sm text-gray-600 hover:text-orange-500 transition">
-                                        <i class="far fa-comment mr-1"></i>3 Respostas
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold text-lg" id="recipeTitle">Receita</h4>
+                        <button onclick="completeLesson()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+                            <i class="fas fa-check mr-2"></i>Marcar como Concluído
+                        </button>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h5 class="font-semibold mb-2">Ingredientes:</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Ingredientes da receita</li>
+                            <li>Modo de preparo detalhado no vídeo</li>
+                            <li>Dicas extras para deixar seu salgado perfeito</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <!-- Video Modal -->
-    <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-4 border-b flex items-center justify-between">
-                <h3 class="text-xl font-bold" id="modalTitle">Aula do Curso</h3>
-                <button onclick="closeVideoModal()" class="text-gray-500 hover:text-gray-700">
-                    <i class="fas fa-times text-2xl"></i>
+        <!-- Bottom Navigation Mobile -->
+        <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t z-30">
+            <div class="flex justify-around py-2">
+                <button class="flex flex-col items-center p-2 text-orange-500">
+                    <i class="fas fa-home text-xl"></i>
+                    <span class="text-xs mt-1">Início</span>
+                </button>
+                <button class="flex flex-col items-center p-2 text-gray-600">
+                    <i class="fas fa-video text-xl"></i>
+                    <span class="text-xs mt-1">Aulas</span>
+                </button>
+                <button class="flex flex-col items-center p-2 text-gray-600">
+                    <i class="fas fa-trophy text-xl"></i>
+                    <span class="text-xs mt-1">Conquistas</span>
+                </button>
+                <button id="mobileLogoutBtn" class="flex flex-col items-center p-2 text-gray-600">
+                    <i class="fas fa-sign-out-alt text-xl"></i>
+                    <span class="text-xs mt-1">Sair</span>
                 </button>
             </div>
-            <div class="p-4">
-                <div class="video-container mb-4" id="videoContainer">
-                    <!-- Video will be inserted here dynamically -->
-                </div>
-                <div class="flex items-center justify-between mb-4">
-                    <h4 class="font-bold text-lg" id="recipeTitle">Receita</h4>
-                    <button onclick="completeLesson()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
-                        <i class="fas fa-check mr-2"></i>Marcar como Concluído
-                    </button>
-                </div>
-                <div class="bg-gray-50 rounded-lg p-4">
-                    <h5 class="font-semibold mb-2">Ingredientes:</h5>
-                    <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li>Ingredientes da receita</li>
-                        <li>Modo de preparo detalhado no vídeo</li>
-                        <li>Dicas extras para deixar seu salgado perfeito</li>
-                    </ul>
+        </nav>
+
+        <!-- Footer Simplificado -->
+        <footer class="bg-gray-800 text-white py-8 mt-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <p>&copy; 2025 Salgados Perfeitos. Todos os direitos reservados.</p>
                 </div>
             </div>
-        </div>
     </div>
-
-    <!-- Notification Toast -->
-    <div id="notificationToast" class="fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 hidden notification-toast">
-        <div class="flex items-center space-x-2">
-            <i class="fas fa-check-circle"></i>
-            <span id="notificationText">Parabéns! Você ganhou 20 XP!</span>
-        </div>
-    </div>
-
-    <!-- Bottom Navigation Mobile -->
-    <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t z-30">
-        <div class="flex justify-around py-2">
-            <button class="flex flex-col items-center p-2 text-orange-500">
-                <i class="fas fa-home text-xl"></i>
-                <span class="text-xs mt-1">Início</span>
-            </button>
-            <button class="flex flex-col items-center p-2 text-gray-600">
-                <i class="fas fa-video text-xl"></i>
-                <span class="text-xs mt-1">Aulas</span>
-            </button>
-            <button class="flex flex-col items-center p-2 text-gray-600">
-                <i class="fas fa-trophy text-xl"></i>
-                <span class="text-xs mt-1">Conquistas</span>
-            </button>
-            <button class="flex flex-col items-center p-2 text-gray-600">
-                <i class="fas fa-comments text-xl"></i>
-                <span class="text-xs mt-1">Comunidade</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-16">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div>
-                    <h4 class="font-bold mb-3">Salgados Perfeitos</h4>
-                    <p class="text-sm text-gray-400">Aprenda a fazer os melhores salgados com técnicas profissionais.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-3">Links Úteis</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Sobre Nós</a></li>
-                        <li><a href="#" class="hover:text-white transition">Dúvidas Frequentes</a></li>
-                        <li><a href="#" class="hover:text-white transition">Contato</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-3">Legal</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Termos de Uso</a></li>
-                        <li><a href="#" class="hover:text-white transition">Política de Privacidade</a></li>
-                        <li><a href="#" class="hover:text-white transition">Política de Reembolso</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-3">Redes Sociais</h4>
-                    <div class="flex space-x-3">
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-orange-500 transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-sm text-gray-400">
-                <p>&copy; 2024 Salgados Perfeitos. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // Video data with titles and embed codes
@@ -902,7 +804,7 @@
             },
             3: {
                 title: "Hambúrguer de Forno",
-                embedCode: '<iframe width="942" height="530" src="https://www.youtube.com/embed/WEdiIVdcvGQ" title="Quando eu faço esse salgado aqui em casa, não sobra NADA! 😋😱" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+                embedCode: '<iframe width="942" height="530" src="https://www.youtube.com/embed/WEdiIVdcvGQ" title="Quando eu faço esse salgado aqui em casa, não sobra NADA! 😋😱" frameborder="0" allow="flex-grow; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
             },
             4: {
                 title: "Bauru Presunto e Queijo",
@@ -945,6 +847,48 @@
                 embedCode: '<iframe width="942" height="530" src="https://www.youtube.com/embed/LxO7PU_qjPI" title="Quibe de Liquidificador Sem Erro – Sabor de Infância na Primeira Mordida!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
             }
         };
+        
+        // Variáveis globais
+        let userName = '';
+        
+        // Form de onboarding
+        document.getElementById('onboardingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('userName');
+            const emailInput = document.getElementById('userEmail');
+            
+            if (nameInput.value && emailInput.value) {
+                userName = nameInput.value;
+                
+                // Salvar no localStorage
+                localStorage.setItem('userName', userName);
+                localStorage.setItem('userEmail', emailInput.value);
+                
+                // Atualizar nome na interface
+                document.getElementById('displayUserName').textContent = userName;
+                document.getElementById('mobileUserName').textContent = userName;
+                
+                // Mostrar conteúdo principal
+                document.getElementById('onboardingScreen').classList.add('hidden');
+                document.getElementById('mainContent').classList.remove('hidden');
+                
+                // Animar entrada
+                document.getElementById('mainContent').classList.add('fade-in');
+            }
+        });
+        
+        // Verificar se usuário já está logado
+        window.addEventListener('load', function() {
+            const savedName = localStorage.getItem('userName');
+            if (savedName) {
+                userName = savedName;
+                document.getElementById('displayUserName').textContent = savedName;
+                document.getElementById('mobileUserName').textContent = savedName;
+                document.getElementById('onboardingScreen').classList.add('hidden');
+                document.getElementById('mainContent').classList.remove('hidden');
+            }
+        });
         
         // Menu Mobile Toggle
         const menuToggle = document.getElementById('menuToggle');
@@ -1014,59 +958,14 @@
         
         // Complete Lesson
         function completeLesson() {
-            showNotification('Parabéns! Você concluiu a aula e ganhou 25 XP!');
+            alert('Aula marcada como concluída! Continue aprendendo!');
             closeVideoModal();
-            updateXP(25);
-        }
-        
-        // Update XP
-        function updateXP(amount) {
-            const xpElement = document.getElementById('userXP');
-            const currentXP = parseInt(xpElement.textContent.replace(',', ''));
-            const newXP = currentXP + amount;
-            xpElement.textContent = newXP.toLocaleString('pt-BR') + ' XP';
-            
-            // Add animation
-            xpElement.parentElement.classList.add('xp-animation');
-            setTimeout(() => {
-                xpElement.parentElement.classList.remove('xp-animation');
-            }, 2000);
-        }
-        
-        // Show Notification
-        function showNotification(message) {
-            const toast = document.getElementById('notificationToast');
-            const text = document.getElementById('notificationText');
-            text.textContent = message;
-            toast.classList.remove('hidden');
-            
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 3000);
         }
         
         // Start New Lesson
         function startNewLesson() {
-            openLesson(2);
-            showNotification('Boa aula! Você está a 1 aula de desbloquear "Mestre dos Salgados"!');
+            openLesson(1);
         }
-        
-        // Simulate Progress Updates
-        setTimeout(() => {
-            showNotification('Nova missão disponível: "Chef da Semana"!');
-        }, 5000);
-        
-        // Animate progress bars on load
-        window.addEventListener('load', () => {
-            const progressBars = document.querySelectorAll('.progress-fill');
-            progressBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 100);
-            });
-        });
         
         // Handle ESC key for modal
         document.addEventListener('keydown', (e) => {
@@ -1075,17 +974,12 @@
             }
         });
         
-        // Bottom Navigation Active State
-        const bottomNavButtons = document.querySelectorAll('nav button');
-        bottomNavButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                bottomNavButtons.forEach(btn => {
-                    btn.classList.remove('text-orange-500');
-                    btn.classList.add('text-gray-600');
-                });
-                this.classList.remove('text-gray-600');
-                this.classList.add('text-orange-500');
-            });
+        // Logout
+        document.getElementById('mobileLogoutBtn')?.addEventListener('click', function() {
+            if (confirm('Tem certeza que deseja sair?')) {
+                localStorage.clear();
+                location.reload();
+            }
         });
     </script>
 </body>
