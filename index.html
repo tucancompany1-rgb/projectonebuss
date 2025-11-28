@@ -99,14 +99,6 @@
             to { opacity: 1; }
         }
         
-        /* Progress Bar */
-        .progress-bar {
-            background: linear-gradient(90deg, var(--primary-orange) 0%, var(--primary-yellow) 100%);
-            height: 4px;
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-        
         /* Comment Card */
         .comment-card {
             transition: all 0.3s ease;
@@ -177,17 +169,6 @@
                     <span class="text-gray-700">Configurações</span>
                 </a>
             </nav>
-            
-            <div class="mt-8 p-4 bg-gradient-to-br from-orange-100 to-yellow-100 rounded-lg">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm font-semibold text-gray-700">Seu Progresso</span>
-                    <span class="text-sm font-bold text-orange-500">65%</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div class="progress-bar" style="width: 65%"></div>
-                </div>
-                <p class="text-xs text-gray-600 mt-2">13 de 20 aulas concluídas</p>
-            </div>
         </div>
     </aside>
 
@@ -195,17 +176,9 @@
     <main class="container mx-auto px-4 py-6">
         <!-- Welcome Banner -->
         <section class="bg-gradient-to-r from-orange-400 via-yellow-400 to-red-400 rounded-2xl p-6 mb-8 text-white shadow-xl">
-            <div class="flex flex-col sm:flex-row items-center justify-between">
-                <div class="mb-4 sm:mb-0">
-                    <h1 class="text-2xl sm:text-3xl font-bold mb-2">Olá, Aluno(a)! 👋</h1>
-                    <p class="text-white/90">Que tal continuar sua jornada para se tornar uma mestre dos salgados?</p>
-                </div>
-                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
-                    <div class="text-center">
-                        <p class="text-3xl font-bold">13</p>
-                        <p class="text-sm">Aulas Concluídas</p>
-                    </div>
-                </div>
+            <div class="text-center">
+                <h1 class="text-2xl sm:text-3xl font-bold mb-2">Olá, Aluno(a)! 👋</h1>
+                <p class="text-white/90">Aprenda a fazer salgados deliciosos e lucrativos!</p>
             </div>
         </section>
 
@@ -238,9 +211,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="festa">
                     <div class="relative">
                         <img src="https://i.ibb.co/bjVLHCXH/enroladinho-de-salsicha-07-11.jpg" alt="Enroladinho Crocante" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Concluído
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 25 min</span>
                         </div>
@@ -258,9 +228,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="assados">
                     <div class="relative">
                         <img src="https://i.ibb.co/sv18jZFz/torta-de-frango-fit.jpg" alt="Torta de Frango Cremosa" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Em andamento
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 30 min</span>
                         </div>
@@ -278,9 +245,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="assados">
                     <div class="relative">
                         <img src="https://i.ibb.co/j94bDK7H/hamburgao-de-forno-capa.jpg" alt="Hambúrguer de Forno" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-gray-400 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Não iniciado
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 20 min</span>
                         </div>
@@ -298,9 +262,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="festa">
                     <div class="relative">
                         <img src="https://i.ibb.co/B2bZSKcH/hq720.jpg" alt="Bauru Presunto e Queijo" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Concluído
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 35 min</span>
                         </div>
@@ -318,9 +279,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="assados">
                     <div class="relative">
                         <img src="https://i.ibb.co/mF9qPZcf/pastel-de-forno-com-recheio-de-frango-desktop.webp" alt="Pastel de Forno" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Em andamento
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 28 min</span>
                         </div>
@@ -338,9 +296,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="massas">
                     <div class="relative">
                         <img src="https://i.ibb.co/Vpg59zNQ/images.jpg" alt="Esfiha Aberta de Frango" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-gray-400 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Não iniciado
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 22 min</span>
                         </div>
@@ -358,9 +313,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="fritos">
                     <div class="relative">
                         <img src="https://i.ibb.co/VYLQnZQQ/hq720-1.jpg" alt="Croquete de Linguiça Toscana" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Concluído
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 25 min</span>
                         </div>
@@ -378,9 +330,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="massas">
                     <div class="relative">
                         <img src="https://i.ibb.co/FqjJGxkP/i-Stock-537521984-1.jpg" alt="Esfiha Aberta de Carne" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Em andamento
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 30 min</span>
                         </div>
@@ -398,9 +347,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="massas">
                     <div class="relative">
                         <img src="https://i.ibb.co/mMgC5RM/esfihas-de-calabresa.jpg" alt="Esfiha de Calabresa" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-gray-400 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Não iniciado
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 20 min</span>
                         </div>
@@ -418,9 +364,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="massas">
                     <div class="relative">
                         <img src="https://i.ibb.co/V0ZjC87w/maxresdefault.jpg" alt="Esfiha de Frango" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Concluído
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 35 min</span>
                         </div>
@@ -438,9 +381,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="festa">
                     <div class="relative">
                         <img src="https://i.ibb.co/JRy6TM6h/maxresdefault-2022-09-28-T111201-325-1024x576.jpg" alt="Joelho" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Em andamento
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 28 min</span>
                         </div>
@@ -458,9 +398,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="assados">
                     <div class="relative">
                         <img src="https://i.ibb.co/vC0Kvbwr/images-1.jpg" alt="Coxinha Sequinha e Crocante" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-gray-400 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Não iniciado
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 22 min</span>
                         </div>
@@ -478,9 +415,6 @@
                 <div class="lesson-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all" data-category="assados">
                     <div class="relative">
                         <img src="https://i.ibb.co/mrrXzMsg/images-2.jpg" alt="Quibe Crocante com Mussarela" class="w-full h-48 object-cover">
-                        <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            Concluído
-                        </div>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                             <span class="text-white text-xs"><i class="fas fa-clock mr-1"></i> 25 min</span>
                         </div>
